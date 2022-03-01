@@ -61,10 +61,8 @@ public class MinseweperGame extends JPanel
             int row = buttonClicked.getRow();
             int col = buttonClicked.getCol();
             
-            if (e.getButton() == MouseEvent.BUTTON1)       // Left Button
+           if (e.getButton() == MouseEvent.BUTTON1 && buttonClicked.getIcon() == null)       // Left Button
             {
-                String msg = "Regular Click on Row " + row + "  Col " + col;
-                JOptionPane.showMessageDialog(null, msg);
                 //buttonClicked.setBackground(Color.LIGHT_GRAY);
                 //buttonClicked.setText("open");
                 //Font newFont = new Font("Arial", Font.BOLD, 25);
@@ -72,17 +70,15 @@ public class MinseweperGame extends JPanel
             }
             else if (e.getButton() == MouseEvent.BUTTON3)  // Right Button
             {
-                String msg = "Right Click on Row " + row + "  Col " + col;
-                JOptionPane.showMessageDialog(null, msg);
-                
-                /*if (buttonClicked.getText().length() == 0)
+                if(buttonClicked.getIcon() == null)
                 {
-                    buttonClicked.setText("Flag");
-                }
+                    Icon icon = new ImageIcon("flagjpeg.jpg");
+                    buttonClicked.setIcon(icon); 
+                }   
                 else
                 {
-                    buttonClicked.setText("");
-                } */
+                    buttonClicked.setIcon(null);
+                }
             }
         }
         
